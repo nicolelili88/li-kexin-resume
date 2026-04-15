@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>李可欣 - 简历</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 40px 20px;
+    }
+
+    .resume-container {
+      background: white;
+      width: 100%;
+      max-width: 210mm;
+      min-height: 297mm;
+      border-radius: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 35px 40px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      flex-shrink: 0;
+    }
+
+    .header-content {
+      flex: 1;
+    }
+
+    .name {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+    }
+
+    .english-name {
+      font-size: 18px;
+      opacity: 0.9;
+      margin-bottom: 20px;
+      font-weight: 300;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 13px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .contact-item a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.95;
+    }
+
+    .contact-item a:hover {
+      opacity: 1;
+    }
+
+    .content {
+      padding: 30px 40px;
+    }
+
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #667eea;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-title::before {
+      content: '';
+      width: 4px;
+      height: 18px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 2px;
+    }
+
+    .summary-item {
+      margin-bottom: 10px;
+    }
+
+    .summary-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+    .summary-desc {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    .project-item {
+      margin-bottom: 16px;
+      padding-left: 16px;
+      border-left: 2px solid #e8e8e8;
+    }
+
+    .project-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 6px;
+    }
+
+    .project-meta {
+      font-size: 12px;
+      color: #999;
+      margin-bottom: 6px;
+      font-style: italic;
+    }
+
+    .project-detail {
+      margin-bottom: 4px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .project-detail strong {
+      color: #667eea;
+    }
+
+    .direction-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 12px;
+      margin-top: 12px;
+      padding: 10px 14px;
+      background: linear-gradient(90deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.04) 100%);
+      border-left: 4px solid #667eea;
+      border-radius: 6px;
+    }
+
+    .sub-project-item {
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .sub-project-item::before {
+      content: '▸';
+      position: absolute;
+      left: 18px;
+      color: #667eea;
+      font-size: 12px;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .education-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .education-item:last-child {
+      border-bottom: none;
+    }
+
+    .education-left {
+      flex: 1;
+    }
+
+    .school-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 4px;
+    }
+
+    .education-details {
+      font-size: 13px;
+      color: #666;
+    }
+
+    .education-right {
+      font-size: 12px;
+      color: #999;
+      white-space: nowrap;
+      margin-left: 20px;
+    }
+
+    .interest-item {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+
+    .interest-item strong {
+      color: #333;
+    }
+
+    /* Chat Button */
+    .chat-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .chat-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+    }
+
+    .chat-hint {
+      position: fixed;
+      bottom: 100px;
+      right: 25px;
+      background: white;
+      color: #667eea;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      z-index: 999;
+      animation: float 3s ease-in-out infinite;
+      border: 1px solid rgba(102, 126, 234, 0.3);
+    }
+
+    .chat-hint::before {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      right: 20px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid white;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .chat-hint-close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 24px;
+      height: 24px;
+      background: #ff6b6b;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .chat-hint:hover .chat-hint-close {
+      opacity: 1;
+    }
+
+    .chat-button svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+
+    /* Chat Modal */
+    .chat-modal {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 380px;
+      max-width: calc(100vw - 60px);
+      height: 520px;
+      max-height: calc(100vh - 150px);
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    .chat-modal.active {
+      display: flex;
+    }
+
+    .chat-modal-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chat-modal-avatar {
+      width: 36px;
+      height: 36px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+
+    .chat-modal-info {
+      flex: 1;
+    }
+
+    .chat-modal-info h4 {
+      font-size: 14px;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .chat-modal-info p {
+      font-size: 11px;
+      margin: 2px 0 0 0;
+      opacity: 0.9;
+    }
+
+    .chat-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .chat-action-btn {
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .chat-action-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .chat-action-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: #f8f9fa;
+    }
+
+    .chat-message {
+      max-width: 85%;
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: 13px;
+      line-height: 1.5;
+      word-wrap: break-word;
+    }
+
+    .chat-message.bot {
+      align-self: flex-start;
+      background: white;
+      border-bottom-left-radius: 4px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-message.user {
+      align-self: flex-end;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-bottom-right-radius: 4px;
+    }
+
+    .chat-message.loading {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 16px;
+    }
+
+    .typing-indicator {
+      display: flex;
+      gap: 3px;
+    }
+
+    .typing-indicator span {
+      width: 6px;
+      height: 6px;
+      background: #667eea;
+      border-radius: 50%;
+      animation: bounce 1.4s infinite ease-in-out;
+    }
+
+    .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+    .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+    .typing-indicator span:nth-child(3) { animation-delay: 0; }
+
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0); }
+      40% { transform: scale(1); }
+    }
+
+    .chat-input-area {
+      padding: 12px;
+      background: white;
+      border-top: 1px solid #e8e8e8;
+      display: flex;
+      gap: 8px;
+    }
+
+    .chat-input-area input {
+      flex: 1;
+      padding: 10px 14px;
+      border: 2px solid #e8e8e8;
+      border-radius: 20px;
+      font-size: 13px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .chat-input-area input:focus {
+      border-color: #667eea;
+    }
+
+    .chat-input-area input::placeholder {
+      color: #999;
+    }
+
+    .chat-send-btn {
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.2s;
+    }
+
+    .chat-send-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .chat-send-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: white;
+    }
+
+    .chat-send-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* API Settings Modal */
+    .api-settings-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1001;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .api-settings-modal.active {
+      display: flex;
+    }
+
+    .api-settings-content {
+      background: white;
+      width: 90%;
+      max-width: 420px;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .api-settings-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .api-settings-header h3 {
+      font-size: 18px;
+      color: #333;
+      margin: 0;
+    }
+
+    .api-settings-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #999;
+    }
+
+    .api-settings-close:hover {
+      color: #333;
+    }
+
+    .api-settings-body {
+      margin-bottom: 18px;
+    }
+
+    .api-form-group {
+      margin-bottom: 14px;
+    }
+
+    .api-form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #333;
+      font-size: 13px;
+    }
+
+    .api-form-group input,
+    .api-form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #e8e8e8;
+      border-radius: 6px;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .api-form-group input:focus,
+    .api-form-group select:focus {
+      border-color: #667eea;
+    }
+
+    .api-form-group .hint {
+      font-size: 11px;
+      color: #999;
+      margin-top: 4px;
+    }
+
+    .api-settings-footer {
+      display: flex;
+      gap: 8px;
+    }
+
+    .api-btn {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .api-btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .api-btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
+    }
+
+    .api-btn-secondary {
+      background: #f0f0f0;
+      color: #333;
+    }
+
+    .api-btn-secondary:hover {
+      background: #e0e0e0;
+    }
+
+    .welcome-message {
+      text-align: center;
+      padding: 15px;
+    }
+
+    .welcome-message h4 {
+      color: #667eea;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .welcome-message p {
+      color: #666;
+      margin-bottom: 12px;
+      font-size: 12px;
+    }
+
+    .suggestions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .suggestion-chip {
+      background: white;
+      border: 1px solid #e8e8e8;
+      padding: 6px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .suggestion-chip:hover {
+      background: #f0f0f0;
+      border-color: #667eea;
+    }
+
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+
+      .resume-container {
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .header {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .avatar {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .chat-button,
+      .chat-modal,
+      .chat-hint {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 20px;
+      }
+
+      .header {
+        padding: 25px 20px;
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .avatar {
+        width: 80px;
+        height: 80px;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .chat-button {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .chat-hint {
+        bottom: 80px;
+        right: 15px;
+        font-size: 12px;
+        padding: 6px 12px;
+      }
+
+      .chat-modal {
+        bottom: 80px;
+        right: 10px;
+        width: calc(100vw - 20px);
+        max-width: none;
+        height: 60vh;
+      }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+    <!-- 头部信息 -->
+    <div class="header">
+      <img src="https://maas-log-prod.cn-wlcb.ufileos.com/anthropic/f3577cc5-2208-4ac8-9f55-2c328e386872/0b78d81c0612cbddf35f04212093b5d5.jpg?UCloudPublicKey=TOKEN_e15ba47a-d098-4fbd-9afc-a0dcf0e4e621&Expires=1776253953&Signature=M9VFecH+NnVH4JAEB5iVFQkC+qI=" alt="李可欣头像" class="avatar">
+      <div class="header-content">
+        <h1 class="name">李可欣</h1>
+        <p class="english-name">Nicole Li</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <span>📱 +86 18245633910</span>
+          </div>
+          <div class="contact-item">
+            <span>✉️</span>
+            <a href="mailto:kexin4376@outlook.com">kexin4376@outlook.com</a>
+          </div>
+          <div class="contact-item">
+            <span>💬 微信：KX_NICOLE_</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 内容区域 -->
+    <div class="content">
+      <!-- 核心优势 -->
+      <div class="section">
+        <h2 class="section-title">核心优势</h2>
+        <div class="summary-item">
+          <div class="summary-title">增长产品经验</div>
+          <div class="summary-desc">围绕"新流首单 UV 提升"目标，可独立完成机会洞察、价值评估、实验设计、方案落地与复盘。</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-title">AI 产品优势</div>
+          <div class="summary-desc">能在已有业务场景中识别 AI 的增量价值，并通过 Agent 重构工作流。</div>
+        </div>
+      </div>
+
+      <!-- AI 赋能工作 -->
+      <div class="section">
+        <h2 class="section-title">AI 赋能工作</h2>
+        <div class="project-item">
+          <div class="project-title">PRD 撰写 Skill（减少低质量工作成本）</div>
+          <div class="project-detail"><strong>能力：</strong>将偏"业务支持型"、产品判断要求较低的 PRD，通过 Skill 自动化产出</div>
+          <div class="project-detail"><strong>效果：</strong>单需求产品人力从 <span class="highlight">4h 降至 5min</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-title">需求价值评估 Skill（BRD 阶段决策辅助）</div>
+          <div class="project-detail"><strong>能力：</strong>输入业务brd→识别业务意图→根据业务目标判断需求价值→用户体验风险→技术可行性&成本→寻找替代方案更好的实现业务意图</div>
+          <div class="project-detail"><strong>效果：</strong>单需求节省产品 <span class="highlight">3h 人力</span></div>
+        </div>
+        <div class="project-item">
+          <div class="project-title">综合类职场助手搭建</div>
+          <div class="project-detail">具备长期记忆能力，可支持多模态信息输入，精准识别用户意图并路由不同的agent给到解决方案，以下为不同agent的角色定义</div>
+          <div class="project-detail">• <strong>产品专家：</strong>基于 rag 增强能力，提供需求洞察、策略规划、商业判断等</div>
+          <div class="project-detail">• <strong>产品助理：</strong>提供 prd 撰写、材料整理、会议纪要等能力</div>
+          <div class="project-detail">• <strong>旅行规划师：</strong>调用天气、机酒等 mcp 接口，做个性化旅游规划</div>
+        </div>
+      </div>
+
+      <!-- 工作经历 -->
+      <div class="section">
+        <h2 class="section-title">工作经历</h2>
+        <div style="margin-bottom: 20px; padding: 12px; background: #f8f9fa; border-radius: 6px; border-left: 4px solid #667eea;">
+          <strong style="color: #667eea;">滴滴 / 平台产品 / 用户增长营销组</strong>
+          <div style="font-size: 13px; color: #666; margin-top: 4px;">产品经理 | 2024.01 – 至今</div>
+        </div>
+        <div class="project-item">
+          <div class="project-title direction-title">【网约车新流增长方向】</div>
+          <div class="project-meta">业务目标：核心目标为提升新流首单 UV，以下为重点项目</div>
+        </div>
+        <div class="project-item sub-project-item">
+          <div class="project-title">【扫码付渠道探索（线下扬招获客）】</div>
+          <div class="project-meta">动作：优化扫码付工具"支付→登录→回端→完单"链路，减少漏斗损耗，提高用户滴滴打车心智</div>
+          <div class="project-detail"><strong>结果：</strong>新流登录数 <span class="highlight">+3.1%（+4.4k）</span>；回端转化 <span class="highlight">+0.2pp（2%→2.2%）</span>；日均新流首单 <span class="highlight">+400（3.7k→4.1k）</span></div>
+        </div>
+        <div class="project-item sub-project-item">
+          <div class="project-title">【首页地址栏优化（引导发单）】</div>
+          <div class="project-meta">动作：基于新流用户首页点击数据下钻gap点，迭代地址栏样式，降低认知与操作摩擦</div>
+          <div class="project-detail"><strong>结果：</strong>地址栏点击率 <span class="highlight">+0.2%（21.3%→21.5%）</span>，新流完单 UV <span class="highlight">+0.15%（日均 +2k）</span></div>
+        </div>
+        <div class="project-item sub-project-item">
+          <div class="project-title">【新流优惠玩法承接（首单→养成全链路）】</div>
+          <div class="project-meta">动作：拉齐用户首单→养成期优惠透出逻辑，优化优惠补贴策略提升钱效，并促进新流首单</div>
+          <div class="project-detail"><strong>结果：</strong>新流 CVR_ROI <span class="highlight">+0.34%（ΔCVR/ΔCAC）</span>；日均新流增量完单 <span class="highlight">1w+</span></div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-title direction-title">【渠道与厂商合作方向】</div>
+          <div class="project-meta">业务目标：渠道合作 For 竞争和市占，实现一站式平台的打车能力覆盖；厂商则是为了提滴滴 app 的 dau 渗透</div>
+        </div>
+        <div class="project-item sub-project-item">
+          <div class="project-meta">主要动作：建立渠道接入白皮书，单需求节省产品 3 人力人日；完成 80% 安卓手机用户打车进度上实时活动卡片的能力，提高进端 dau <span class="highlight">+5w</span></div>
+        </div>
+      </div>
+
+      <!-- 教育背景 -->
+      <div class="section">
+        <h2 class="section-title">教育背景</h2>
+        <div class="education-item">
+          <div class="education-left">
+            <div class="school-name">UCL 伦敦大学学院</div>
+            <div class="education-details">硕士 · 建筑设计 | Distinction；课程侧重机器学习、游戏设计与开发、交互设计</div>
+          </div>
+          <div class="education-right">2022.09 – 2023.12</div>
+        </div>
+        <div class="education-item">
+          <div class="education-left">
+            <div class="school-name">黑龙江科技大学</div>
+            <div class="education-details">本科 · 建筑学 | 综合排名 3/60；与 MIT 联合设计作品"MEGA HOTEL"于上海西岸美术馆展览</div>
+          </div>
+          <div class="education-right">2017.09 – 2022.06</div>
+        </div>
+      </div>
+
+      <!-- 兴趣与创造 -->
+      <div class="section">
+        <h2 class="section-title">兴趣与创造</h2>
+        <div class="interest-item"><strong>Vibe coding：</strong>在搭建面向年轻人的陪伴类 App（产品定位："活着就很美好"）</div>
+        <div class="interest-item"><strong>个人知识库：</strong>整理跨领域材料，做本地知识库部署</div>
+        <div class="interest-item"><strong>LLM 应用探索：</strong>持续跟进并体验市面上大模型应用与产品形态</div>
+      </div>
+    </div>
+
+    <!-- Chat Button -->
+    <div class="chat-button" onclick="toggleChat()" title="简历问答助手">
+      <svg viewBox="0 0 24 24">
+        <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+      </svg>
+    </div>
+
+    <!-- Chat Hint -->
+    <div class="chat-hint" id="chatHint">
+      <button class="chat-hint-close" onclick="closeChatHint(event)">&times;</button>
+      💬 有问题？点我聊聊
+    </div>
+
+    <!-- Chat Modal -->
+    <div class="chat-modal" id="chatModal">
+      <div class="chat-modal-header">
+        <div class="chat-modal-avatar">🤖</div>
+        <div class="chat-modal-info">
+          <h4>李可欣简历助手</h4>
+          <p>基于简历内容的智能问答</p>
+        </div>
+        <div class="chat-actions">
+          <button class="chat-action-btn" onclick="openApiSettings()" title="API 设置">
+            <svg viewBox="0 0 24 24">
+              <path d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.06-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.06,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.43-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.07,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"/>
+            </svg>
+          </button>
+          <button class="chat-action-btn" onclick="toggleChat()" title="关闭">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="welcome-message">
+          <h4>你好！我是李可欣的简历助手 👋</h4>
+          <p>基于简历内容，我可以回答关于李可欣的问题</p>
+          <div class="suggestions">
+            <div class="suggestion-chip" onclick="askSuggestion('核心优势')">核心优势</div>
+            <div class="suggestion-chip" onclick="askSuggestion('AI赋能工作')">AI赋能工作</div>
+            <div class="suggestion-chip" onclick="askSuggestion('核心项目')">核心项目</div>
+            <div class="suggestion-chip" onclick="askSuggestion('教育背景')">教育背景</div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-input-area">
+        <input type="text" id="userInput" placeholder="问我关于李可欣的问题..." onkeypress="handleKeyPress(event)">
+        <button class="chat-send-btn" id="sendBtn" onclick="sendMessage()">
+          <svg viewBox="0 0 24 24">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- API Settings Modal -->
+    <div class="api-settings-modal" id="apiSettingsModal">
+      <div class="api-settings-content">
+        <div class="api-settings-header">
+          <h3>API 设置</h3>
+          <button class="api-settings-close" onclick="closeApiSettings()">&times;</button>
+        </div>
+        <div class="api-settings-body">
+          <div class="api-form-group">
+            <label>智谱 API Key</label>
+            <input type="password" id="apiKey" value="d4833ef5b4934aa4b4a82f9cea975a53.COgETxvv3CfOqHj8">
+            <p class="hint">你的 API Key 会被安全地存储在浏览器本地</p>
+          </div>
+          <div class="api-form-group">
+            <label>模型选择</label>
+            <select id="modelSelect">
+              <option value="glm-4" selected>GLM-4（最新）</option>
+              <option value="glm-4-flash">GLM-4 Flash（快速）</option>
+              <option value="glm-3-turbo">GLM-3 Turbo（经济）</option>
+            </select>
+          </div>
+        </div>
+        <div class="api-settings-footer">
+          <button class="api-btn api-btn-secondary" onclick="closeApiSettings()">取消</button>
+          <button class="api-btn api-btn-primary" onclick="saveApiSettings()">保存</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Resume Knowledge Base
+      const resumeKnowledge = `
+# 李可欣（Nicole Li）简历
+
+## 基本信息
+- 姓名：李可欣
+- 英文名：Nicole Li
+- 手机：+86 18245633910
+- 邮箱：kexin4376@outlook.com
+- 微信：KX_NICOLE_
+
+## 核心优势
+- 增长产品经验：围绕"新流首单 UV 提升"目标，可独立完成机会洞察、价值评估、实验设计、方案落地与复盘。
+- AI 产品优势：能在已有业务场景中识别 AI 的增量价值，并通过 Agent 重构工作流。
+
+## AI 赋能工作
+### PRD 撰写 Skill（减少低质量工作成本）
+- 能力：将偏"业务支持型"、产品判断要求较低的 PRD，通过 Skill 自动化产出
+- 效果：单需求产品人力从 4h 降至 5min
+
+### 需求价值评估 Skill（BRD 阶段决策辅助）
+- 能力：输入业务brd→识别业务意图→根据业务目标判断需求价值→用户体验风险→技术可行性&成本→寻找替代方案更好的实现业务意图
+- 效果：单需求节省产品 3h 人力
+
+### 综合类职场助手搭建
+- 具备长期记忆能力，可支持多模态信息输入，精准识别用户意图并路由不同的agent给到解决方案，以下为不同agent的角色定义
+- 产品专家：基于 rag 增强能力，提供需求洞察、策略规划、商业判断等
+- 产品助理：提供 prd 撰写、材料整理、会议纪要等能力
+- 旅行规划师：调用天气、机酒等 mcp 接口，做个性化旅游规划
+
+## 工作经历
+### 滴滴 / 平台产品 / 用户增长营销组 | 产品经理 | 2024.01 – 至今
+
+#### 【网约车新流增长方向】
+业务目标：核心目标为提升新流首单 UV，以下为重点项目
+
+##### 【扫码付渠道探索（线下扬招获客）】
+- 动作：优化扫码付工具"支付→登录→回端→完单"链路，减少漏斗损耗，提高用户滴滴打车心智
+- 结果：新流登录数 +3.1%（+4.4k）；回端转化 +0.2pp（2%→2.2%）；日均新流首单 +400（3.7k→4.1k）
+
+##### 【首页地址栏优化（引导发单）】
+- 动作：基于新流用户首页点击数据下钻gap点，迭代地址栏样式，降低认知与操作摩擦
+- 结果：地址栏点击率 +0.2%（21.3%→21.5%），新流完单 UV +0.15%（日均 +2k）
+
+##### 【新流优惠玩法承接（首单→养成全链路）】
+- 动作：拉齐用户首单→养成期优惠透出逻辑，优化优惠补贴策略提升钱效，并促进新流首单
+- 结果：新流 CVR_ROI +0.34%（ΔCVR/ΔCAC）；日均新流增量完单 1w+
+
+#### 【渠道与厂商合作方向】
+- 业务目标：渠道合作 For 竞争和市占，实现一站式平台的打车能力覆盖；厂商则是为了提滴滴 app 的 dau 渗透
+- 主要动作：建立渠道接入白皮书，单需求节省产品 3 人力人日；完成 80% 安卓手机用户打车进度上实时活动卡片的能力，提高进端 dau +5w
+
+## 教育背景
+### UCL 伦敦大学学院
+- 硕士 · 建筑设计（2022.09–2023.12）
+- Distinction；课程侧重机器学习、游戏设计与开发、交互设计。
+
+### 黑龙江科技大学
+- 本科 · 建筑学（2017.09–2022.06）
+- 综合排名 3/60；与 MIT 联合设计作品"MEGA HOTEL"于上海西岸美术馆展览
+
+## 兴趣与创造
+- Vibe coding：在搭建面向年轻人的陪伴类 App（产品定位："活着就很美好"）
+- 个人知识库：整理跨领域材料，做本地知识库部署
+- LLM 应用探索：持续跟进并体验市面上大模型应用与产品形态
+`;
+
+      // Chat State
+      let conversationHistory = [];
+      let apiKey = localStorage.getItem('zhipu_api_key') || 'd4833ef5b4934aa4b4a82f9cea975a53.COgETxvv3CfOqHj8';
+      let model = localStorage.getItem('zhipu_model') || 'glm-4';
+
+      // Initialize
+      document.addEventListener('DOMContentLoaded', () => {
+        if (apiKey) {
+          document.getElementById('apiKey').value = apiKey;
+        }
+        document.getElementById('modelSelect').value = model;
+
+        // Check if hint was shown before
+        const hintShown = localStorage.getItem('chatHintShown');
+        if (hintShown === 'true') {
+          const hint = document.getElementById('chatHint');
+          if (hint) {
+            hint.style.display = 'none';
+          }
+        }
+      });
+
+      // Chat Functions
+      function toggleChat() {
+        const modal = document.getElementById('chatModal');
+        modal.classList.toggle('active');
+        // Auto close hint when opening chat
+        if (modal.classList.contains('active')) {
+          const hint = document.getElementById('chatHint');
+          if (hint) {
+            hint.style.display = 'none';
+            localStorage.setItem('chatHintShown', 'true');
+          }
+        }
+      }
+
+      function closeChatHint(event) {
+        event.stopPropagation();
+        const hint = document.getElementById('chatHint');
+        hint.style.display = 'none';
+        localStorage.setItem('chatHintShown', 'true');
+      }
+
+      function openApiSettings() {
+        document.getElementById('apiSettingsModal').classList.add('active');
+      }
+
+      function closeApiSettings() {
+        document.getElementById('apiSettingsModal').classList.remove('active');
+      }
+
+      function saveApiSettings() {
+        apiKey = document.getElementById('apiKey').value.trim();
+        model = document.getElementById('modelSelect').value;
+
+        if (!apiKey) {
+          alert('请输入 API Key');
+          return;
+        }
+
+        localStorage.setItem('zhipu_api_key', apiKey);
+        localStorage.setItem('zhipu_model', model);
+        closeApiSettings();
+
+        // Remove welcome message
+        const welcomeMsg = document.querySelector('.welcome-message');
+        if (welcomeMsg) {
+          welcomeMsg.remove();
+        }
+
+        addMessage('bot', 'API 设置已保存！现在你可以开始提问了。');
+      }
+
+      function addMessage(type, content) {
+        const messagesContainer = document.getElementById('chatMessages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `chat-message ${type}`;
+        messageDiv.textContent = content;
+        messagesContainer.appendChild(messageDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+
+      function showLoading() {
+        const messagesContainer = document.getElementById('chatMessages');
+        const loadingDiv = document.createElement('div');
+        loadingDiv.className = 'chat-message bot loading';
+        loadingDiv.id = 'loadingMessage';
+        loadingDiv.innerHTML = `
+          <div class="typing-indicator">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        `;
+        messagesContainer.appendChild(loadingDiv);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+
+      function hideLoading() {
+        const loadingMessage = document.getElementById('loadingMessage');
+        if (loadingMessage) {
+          loadingMessage.remove();
+        }
+      }
+
+      async function sendMessage() {
+        const userInput = document.getElementById('userInput');
+        const message = userInput.value.trim();
+
+        if (!message) return;
+
+        if (!apiKey) {
+          alert('请先配置 API Key（点击聊天窗口右上角的设置按钮）');
+          openApiSettings();
+          return;
+        }
+
+        // Remove welcome message if exists
+        const welcomeMsg = document.querySelector('.welcome-message');
+        if (welcomeMsg) {
+          welcomeMsg.remove();
+        }
+
+        // Add user message
+        addMessage('user', message);
+        userInput.value = '';
+
+        // Show loading
+        showLoading();
+
+        try {
+          const response = await callZhipu(message);
+          hideLoading();
+          addMessage('bot', response);
+        } catch (error) {
+          hideLoading();
+          addMessage('bot', `抱歉，出错了：${error.message}`);
+        }
+      }
+
+      async function callZhipu(message) {
+        const messages = [
+          {
+            role: 'system',
+            content: `你是李可欣的简历助手。请基于以下简历内容回答用户的问题。如果问题超出简历范围，请礼貌地说明。
+
+简历内容：
+${resumeKnowledge}
+
+回答要求：
+1. 准确基于简历内容回答
+2. 语言简洁明了
+3. 适当使用emoji增加亲和力
+4. 如果涉及具体数字，请准确引用简历中的数据
+5. 用中文回答
+6. 回答长度控制在200字以内`
+          },
+          ...conversationHistory.slice(-10),
+          {
+            role: 'user',
+            content: message
+          }
+        ];
+
+        const response = await fetch('https://open.bigmodel.cn/api/paas/v4/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`
+          },
+          body: JSON.stringify({
+            model: model,
+            messages: messages,
+            max_tokens: 500,
+            temperature: 0.7
+          })
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(errorData.error?.message || 'API 请求失败');
+        }
+
+        const data = await response.json();
+        const assistantMessage = data.choices[0].message.content;
+
+        // Update conversation history
+        conversationHistory.push(
+          { role: 'user', content: message },
+          { role: 'assistant', content: assistantMessage }
+        );
+
+        return assistantMessage;
+      }
+
+      function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+          sendMessage();
+        }
+      }
+
+      function askSuggestion(question) {
+        document.getElementById('userInput').value = question;
+        sendMessage();
+      }
+    </script>
+  </div>
+</body>
+</html>
