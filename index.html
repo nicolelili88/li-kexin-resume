@@ -693,22 +693,83 @@
     }
 
     @media print {
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
       body {
-        background: white;
-        padding: 0;
-      }
-
-      .resume-container {
-        box-shadow: none;
-        border-radius: 0;
-      }
-
-      .header {
+        background: white !important;
+        padding: 0 !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
 
+      .resume-container {
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: auto !important;
+      }
+
+      .header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        color: white !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
       .avatar {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .content {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .section {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .section-title {
+        color: #667eea !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .section-title::before {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .project-title {
+        color: #333 !important;
+      }
+
+      .direction-title {
+        background: linear-gradient(90deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.04) 100%) !important;
+        border-left: 4px solid #667eea !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .highlight {
+        background: linear-gradient(120deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%) !important;
+        color: #333 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .project-detail strong {
+        color: #667eea !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
@@ -717,6 +778,21 @@
       .chat-modal,
       .chat-hint {
         display: none !important;
+      }
+
+      .summary-desc,
+      .project-detail,
+      .project-meta,
+      .education-details,
+      .education-right,
+      .interest-item {
+        color: #666 !important;
+      }
+
+      .school-name,
+      .project-title,
+      .summary-title {
+        color: #333 !important;
       }
     }
 
