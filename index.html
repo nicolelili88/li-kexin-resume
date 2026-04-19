@@ -327,35 +327,6 @@
       fill: white;
     }
 
-    /* Print Button */
-    .print-button {
-      position: fixed;
-      bottom: 30px;
-      left: 30px;
-      width: 60px;
-      height: 60px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
-      transition: all 0.3s ease;
-      z-index: 999;
-    }
-
-    .print-button:hover {
-      transform: scale(1.1);
-      box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
-    }
-
-    .print-button svg {
-      width: 28px;
-      height: 28px;
-      fill: white;
-    }
-
     /* Chat Modal */
     .chat-modal {
       position: fixed;
@@ -811,8 +782,7 @@
 
       .chat-button,
       .chat-modal,
-      .chat-hint,
-      .print-button {
+      .chat-hint {
         display: none !important;
       }
 
@@ -870,13 +840,6 @@
         right: 15px;
         font-size: 12px;
         padding: 6px 12px;
-      }
-
-      .print-button {
-        bottom: 20px;
-        left: 20px;
-        width: 50px;
-        height: 50px;
       }
 
       .chat-modal {
@@ -966,7 +929,7 @@
           <div class="project-meta">业务目标：渠道合作 FOR 竞争和市占，实现一站式平台的打车能力覆盖；厂商则是为了提滴滴 APP 的 DAU 渗透</div>
         </div>
         <div class="project-item sub-project-item">
-          <div class="project-meta">主要动作：建立渠道接入白皮书，单需求节省产品 3 人力人日；完成 80% 安卓手机用户打车进度上实时活动卡片的能力，提高进端 DAU <span class="highlight">+5w</span></div>
+          <div class="project-meta">主要动作：建立渠道接入白皮书，单需求节省产品 3 人力人日；完成 80% 安卓手机用户打车进度上实时活动卡片的能力，提高进端 DAU <span class="highlight">+5W</span></div>
         </div>
       </div>
 
@@ -996,13 +959,6 @@
         <div class="interest-item"><strong>AI赋能工作：</strong>搭建个人知识库、实验看版监测分析SKILL、PRD撰写SKILL、需求价值评估SKILL、职场助手工作流等</div>
         <div class="interest-item"><strong>LLM 应用探索：</strong>持续跟进并体验市面上大模型应用与产品形态</div>
       </div>
-    </div>
-
-    <!-- Print Button -->
-    <div class="print-button" onclick="printResume()" title="导出 PDF">
-      <svg viewBox="0 0 24 24">
-        <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
-      </svg>
     </div>
 
     <!-- Chat Button -->
@@ -1131,7 +1087,7 @@
 
 #### 【渠道与厂商合作方向】
 - 业务目标：渠道合作 FOR 竞争和市占，实现一站式平台的打车能力覆盖；厂商则是为了提滴滴 APP 的 DAU 渗透
-- 主要动作：建立渠道接入白皮书，单需求节省产品 3 人力人日；完成 80% 安卓手机用户打车进度上实时活动卡片的能力，提高进端 DAU +5w
+- 主要动作：建立渠道接入白皮书，单需求节省产品 3 人力人日；完成 80% 安卓手机用户打车进度上实时活动卡片的能力，提高进端 DAU +5W
 
 ## 教育背景
 ### UCL 伦敦大学学院
@@ -1352,11 +1308,6 @@ ${resumeKnowledge}
       function askSuggestion(question) {
         document.getElementById('userInput').value = question;
         sendMessage();
-      }
-
-      // Print Function
-      function printResume() {
-        window.print();
       }
     </script>
   </div>
