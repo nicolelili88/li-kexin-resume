@@ -724,12 +724,13 @@
     @media print {
       @page {
         size: A4;
-        margin: 0;
+        margin: 10mm;
       }
 
       body {
         background: white !important;
         padding: 0 !important;
+        margin: 0 !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
@@ -740,6 +741,7 @@
         width: 100% !important;
         max-width: 100% !important;
         min-height: auto !important;
+        padding: 0 !important;
       }
 
       .header {
@@ -749,6 +751,7 @@
         color: white !important;
         break-inside: avoid;
         page-break-inside: avoid;
+        margin-bottom: 20px !important;
       }
 
       .avatar {
@@ -761,9 +764,11 @@
       .content {
         break-inside: avoid;
         page-break-inside: avoid;
+        padding: 0 !important;
       }
 
       .section {
+        margin-bottom: 20px !important;
         break-inside: avoid;
         page-break-inside: avoid;
       }
@@ -772,6 +777,7 @@
         color: #667eea !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
+        margin-bottom: 12px !important;
       }
 
       .section-title::before {
@@ -823,6 +829,11 @@
       .project-title,
       .summary-title {
         color: #333 !important;
+      }
+
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
       }
     }
 
